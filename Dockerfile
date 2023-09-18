@@ -7,6 +7,7 @@ COPY ./src .
 RUN [ "apt", "update" ]
 
 RUN [ "apt", "install", "-y", "tesseract-ocr", "tesseract-ocr-eng" ] 
+RUN [ "apt", "install", "-y", "ffmpeg", "libsm6", "libxext6" ] 
 
 RUN [ "pip3", "install", "-r", "requirements.txt" ]
 
