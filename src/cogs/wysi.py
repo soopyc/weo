@@ -71,6 +71,7 @@ class Wysi(commands.Cog):
             )
             return
 
+        _interaction = interaction.response.defer(thinking=True)
         highlighted_files = []
         for attachment in message.attachments:
             attachment_bytes = await attachment.read()
@@ -81,9 +82,9 @@ class Wysi(commands.Cog):
                 highlighted_files.append(highlighted_file)
 
         if highlighted_files:
-            await interaction.response.send_message(files=highlighted_files)
+            await _interaction.followup.send(files=highlighted_files)
         else:
-            await interaction.response.send_message("no 727 here :moyai:")
+            await _interaction.followup.send("no 727 here :moyai:")
 
     @app_commands.command(name="owo")
     async def owo(self, interaction: discord.Interaction) -> None:
