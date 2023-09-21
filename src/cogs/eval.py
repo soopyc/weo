@@ -33,9 +33,9 @@ class Eval(commands.Cog):
 
     @commands.command()
     async def eval(self, ctx: commands.Context, *, code: str):
-        code = code.strip("```py")
         code = code.strip("`")
         code = code.strip()
+        code = code.replace("py", "", 1)
 
         if not code.startswith("print") and "\n" not in code:
             code = f"print({code})"
