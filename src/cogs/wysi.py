@@ -51,7 +51,7 @@ class Wysi(commands.Cog):
     def __init__(self, bot: commands.Bot) -> None:
         self.bot = bot
         self.ctx_menu = app_commands.ContextMenu(
-            name="where 727",
+            name="where do you see it?",
             callback=self.where_727,
         )
         self.bot.tree.add_command(self.ctx_menu)
